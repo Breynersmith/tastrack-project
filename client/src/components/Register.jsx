@@ -17,7 +17,7 @@ export default function Register(){
     setError(null)
     
     try {
-      const response = await axios.post('http://localhost:8000/auth/users/', {
+      const response = await axios.post('https://tastrack-project.vercel.app/auth/users/', {
         username,
         email,
         password
