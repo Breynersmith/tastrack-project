@@ -56,6 +56,7 @@ export default function Register(){
       onChange={(e)=> setEmail(e.target.value)}
       />
       <input
+      type='password'
       className="px-2 py-4 rounded-md text-center"
       placeholder="Enter password"
       value={password}

@@ -87,10 +87,17 @@ WSGI_APPLICATION = 'tasktrack.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'db-project-tasktrack.c160wggc8raf.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'Brey',
+        'PASSWORD': 'Fb255834',
+        'NAME': 'db_tasktrack_1',
     }
 }
+
+#DATABASES
+
 
 
 # Password validation

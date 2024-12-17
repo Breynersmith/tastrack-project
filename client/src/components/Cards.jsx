@@ -117,25 +117,25 @@ export default function Cards( {
 
                     card.list === listId && (
                         <div key={card.id} className="p-2 mt-2 rounded-md bg-gray-200 shadow-lg flex justify-between">
-                            <input
-                            className="text-xs"
-                            value={activeInput === index ? titleChanged: card.title}
-                            onChange={(e) => {
-                                if (activeInput === index) {
+                    <input
+                    className="text-xs"
+                    value={ activeInput === index ? titleChanged: card.title }
+                    onChange={(e) => {
+                        if (activeInput === index) {
                                     setTitleChanged(e.target.value)
                                 }
                             }}
-                            onFocus={() => { if (activeInput === index && titleChanged === "") {
+                    onFocus={() => { if (activeInput === index && titleChanged === "") {
                                 setTitleChanged(card.name)
                             }
                             }
                             }
-                            onKeyUp={(e) => {
-                                if (e.key === 'Enter' && activeInput === index) {
-                                    handleUpdateCard(cardId, updateField)
+                    onKeyUp={(e) => {
+                        if (e.key === 'Enter' && activeInput === index) {           handleUpdateCard(cardId, updateField)
                                 }
-                            }
-                            disabled = { activeInput !== index }/>
+                            }}
+                            
+                    disabled= {activeInput !== index}/>
                             <div className="relative">
                                 <button
                                     onClick={(e) => {
