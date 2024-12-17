@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchCards = createAsyncThunk('cards/fetchCards', async (listId, thunkApi) => {
   try {
     const token = localStorage.getItem('access');
-    const response = await axios.get(`http://localhost:8000/api/cards/?list=${listId}`, {
+    const response = await axios.get(`https://tastrack-project.vercel.app/api/cards/?list=${listId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (response.status === 200) {
@@ -21,7 +21,7 @@ export const addCard = createAsyncThunk('cards/addCard', async ({ title, descrip
   try {
     const token = localStorage.getItem('access');
     const response = await axios.post(
-      `http://localhost:8000/api/cards/`,
+      `https://tastrack-project.vercel.app/api/cards/`,
       { title, description, list },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -37,7 +37,7 @@ export const updateCard = createAsyncThunk('cards/update/card', async ({cardId, 
   try {
     const token = localStorage.getItem("access");
     const response = await axios.patch(
-      `http://localhost:8000/api/cards/${cardId}/`,
+      `https://tastrack-project.vercel.app/api/cards/${cardId}/`,
       updateField, 
       {
         headers: {
@@ -55,7 +55,7 @@ export const updateCard = createAsyncThunk('cards/update/card', async ({cardId, 
 export const deleteCard = createAsyncThunk('cards/deleteCard', async (cardId, thunkApi) => {
   try {
     const token = localStorage.getItem('access');
-    const response = await axios.delete(`http://localhost:8000/api/cards/${cardId}/`, {
+    const response = await axios.delete(`https://tastrack-project.vercel.app/api/cards/${cardId}/`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (response.status === 204) {

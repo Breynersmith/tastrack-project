@@ -6,7 +6,7 @@ export const fetchLists = createAsyncThunk(
   async (boardId, thunkApi) => {
     try {
       const token = localStorage.getItem('access')
-      const response = await axios.get(`http://localhost:8000/api/lists/?board_id=${boardId}`,{
+      const response = await axios.get(`https://tastrack-project.vercel.app/api/lists/?board_id=${boardId}`,{
         headers : {
           Authorization : `Bearer ${token}`
         }
@@ -24,7 +24,7 @@ export const addList = createAsyncThunk(
     async ({name, board}, thunkApi) => {
       try {
         const token = localStorage.getItem('access')
-        const response = await axios.post(`http://localhost:8000/api/lists/?board_id=${board}`,{
+        const response = await axios.post(`https://tastrack-project.vercel.app/api/lists/?board_id=${board}`,{
           name,
           board 
         }, {
@@ -46,7 +46,7 @@ export const deleteList = createAsyncThunk(
     async (listId, thunkApi) => {
       try {
         const token = localStorage.getItem('access')
-        const response = await axios.delete(`http://localhost:8000/api/lists/${listId}`, {
+        const response = await axios.delete(`https://tastrack-project.vercel.app/api/lists/${listId}`, {
           headers : {
             Authorization :`Bearer ${token}`
           }
@@ -64,7 +64,7 @@ export const updateList = (
     "lists/updateList", async ({listId, name}, thunkApi) => {
       try {
        const token = localStorage.getItem("access")
-       const response = await axios.patch(`http://localhost:8000/api/lists/${listId}/`, {
+       const response = await axios.patch(`https://tastrack-project.vercel.app/api/lists/${listId}/`, {
          name
        }, {
          headers : {

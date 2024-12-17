@@ -7,7 +7,7 @@ export const fetchBoards = createAsyncThunk(
   async (userId, thunkApi) => {
     try {
       const token = localStorage.getItem('access')
-      const response = await axios.get(`http://localhost:8000/api/boards/?user=${userId}`,{
+      const response = await axios.get(`https://tastrack-project.vercel.app/api/boards/?user=${userId}`,{
         headers : {
           Authorization : `Bearer ${token}`
         }
@@ -25,7 +25,7 @@ export const addBoard = createAsyncThunk(
     async ({name, created_by}, thunkApi) => {
       try {
         const token = localStorage.getItem('access')
-        const response = await axios.post(`http://localhost:8000/api/boards/?user=${created_by}/`,{
+        const response = await axios.post(`https://tastrack-project.vercel.app/api/boards/?user=${created_by}/`,{
           name,
           created_by 
         }, {
@@ -49,7 +49,7 @@ export const deleteBoard = createAsyncThunk(
     async (boardId, thunkApi) => {
       try {
         const token = localStorage.getItem('access')
-        const response = await axios.delete(`http://localhost:8000/api/boards/${boardId}`, {
+        const response = await axios.delete(`https://tastrack-project.vercel.app/api/boards/${boardId}`, {
           headers : {
             Authorization :`Bearer ${token}`
           }
@@ -66,7 +66,7 @@ export const sharedBoard = createAsyncThunk(
   'boards/sharedBoard', async ({boardId, email}, thunkApi) => {
     try {
       const token = localStorage.getItem("access")
-      const response = axios.post(`http://localhost:8000/api/boards/${boardId}/share/`,
+      const response = axios.post(`https://tastrack-project.vercel.app/api/boards/${boardId}/share/`,
       { email }, {
         headers : {
           Authorization : `Bearer ${token}`

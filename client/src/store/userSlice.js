@@ -7,7 +7,7 @@ export const fetchUser = createAsyncThunk(
   async (_, {rejectWithValue}) =>{
     try {
       const token = localStorage.getItem('access')
-      const response = await axios.get(`http://localhost:8000/auth/users/me/`, {
+      const response = await axios.get(`https://tastrack-project.vercel.app/auth/users/me/`, {
         headers : {
           Authorization : `Bearer ${token}`
         }
@@ -20,7 +20,8 @@ export const fetchUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk("user/loginUser", async ({username, password}, thunkApi) => {
   try {
-    const response = await axios.post(`http://localhost:8000/auth/jwt/create/`, {
+      
+    const response = await axios.post(`https://tastrack-project.vercel.app/auth/jwt/create/`, {
       username,
       password
     }, {
