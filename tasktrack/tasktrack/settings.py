@@ -14,7 +14,9 @@ SECRET_KEY = 'django-insecure-ed0!+xflfsbke%e17#rpkrl5$fy0(#wa%z@g_@-@z7b(-%t_64
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['tastrack-project.vercel.app']
+
 
 
 
