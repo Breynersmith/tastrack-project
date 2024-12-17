@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "tasktrack/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "tasktrack/wsgi.py"
+    }
+  ]
+}
