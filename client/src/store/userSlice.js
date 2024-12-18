@@ -37,7 +37,30 @@ export const loginUser = createAsyncThunk("user/loginUser", async ({username, pa
     return thunkApi.rejectWithValue(error.response.data)
   }
 }
-  )  
+  ) 
+  
+export const signupUser = createAsyncThunk(
+    "user/signupUser", async ({ username, email, password }, thunkApi) => {
+    try {
+        const response = await axios.post('https://tastrack-project.vercel.app/auth/users/', {
+        username,
+        email,
+        password
+      }, {
+        headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36',
+      Referer: 'http://127.0.0.1:5173/register',
+    },
+      })
+     if (response.status === 201) {
+       return response.data
+     } 
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.response.data)
+        }
+    })
  
   const userSlice = createSlice({
     name: 'user',
@@ -79,6 +102,19 @@ export const loginUser = createAsyncThunk("user/loginUser", async ({username, pa
          .addCase(fetchUser.rejected, (state, action) => {
            state.loading = false
            state.error = action.payload
+         })
+         .addCase(signupUser.fulfilled, (state, action) => {
+             state.data = action.payload
+             state.loading = false
+             state.error = null
+         })
+         .addCase(signupUser.pending, (state) => {
+             state.loading = true
+             state.error = null
+         })
+         .addCase(signupUser.rejected, (state, action) => {
+             state.loading = false
+             state.error = action.payload
          })
     }
   })

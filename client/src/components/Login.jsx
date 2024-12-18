@@ -49,7 +49,7 @@ export default function Login(){
        value={password}
        onChange={(e)=> setPassword(e.target.value)}
        />
-       <button type="submit" className="btn bg-blue-600 text-gray-200 font-bold text-xl py-2 px-8 rounded-lg mt-4">{loading ? 'Cargando' : 'Login'}</button>
+       <button type="submit" className="btn bg-blue-600 text-gray-200 font-bold text-xl py-2 px-8 rounded-lg mt-4">{loading ? 'Logging in' : 'Login'}</button>
        
        {localError && <div className="border-2 p-2 text-sm text-center text-red-400 border-red-400 bg-red-50">{localError}</div>}
        <button onClick={() => navigate('/register')}
