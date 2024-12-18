@@ -58,6 +58,7 @@ export default function Lists( {
                 await dispatch(addList( {
                     name, board: boardId
                 }))
+                await dispatch(fetchLists(boardId))
                 setName("")
                 setShowInput(false)
             } catch (error) {
