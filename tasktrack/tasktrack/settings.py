@@ -144,13 +144,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://tastrack-client.vercel.app/login"
+    "https://tastrack-client.vercel.app/"
     'https://tastrack-project-breyner.vercel.app/'
 ]
 
 DJOSER = {
     'USER_ID_FIELD': 'id',
-    'SEND_ACTIVATION_EMAIL': False,  # Puedes activar el correo de activación si lo necesitas
+    'SEND_ACTIVATION_EMAIL': False,  
     'SERIALIZERS': {
         'user_create': 'djoser.serializers.UserCreateSerializer',
         'user': 'djoser.serializers.UserSerializer',
