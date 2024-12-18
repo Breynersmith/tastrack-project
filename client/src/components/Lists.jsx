@@ -52,6 +52,7 @@ export default function Lists( {
     const handleAddList = async (e) => {
         e.preventDefault()
         if (name === '') {
+            setShowInput(true)
             return
         } else {
             try {
@@ -184,8 +185,14 @@ export default function Lists( {
                 onChange={(e) => setName(e.target.value)}
                 className={`${showInput ? 'showInput': 'hidden'} w-full rounded-md bg-gray-100 border-4 border-blue-600 p-2`} />
             <div className="flex gap-2 mt-2">
-                <button type="button" onClick={(e) => setShowInput(true)} className="bg-blue-600 text-gray-200 font-bold p-2 rounded-lg text-xs">{!showInput ? 'Nueva Lista': 'Añadir'}</button>
-                <button className={`${showInput ? '': 'hidden'} bg-blue-600 text-gray-200 font-bold px-2 rounded-lg`} onClick={(e) => setShowInput(false)}>
+                <button 
+                type="button"  
+                className="bg-blue-600 text-gray-200 font-bold p-2 rounded-lg text-xs">
+                    {!showInput ? 'Nueva Lista': 'Añadir'}
+                </button>
+                <button 
+                className={`${showInput ? '': 'hidden'} bg-blue-600 text-gray-200 font-bold px-2 rounded-lg`} 
+                onClick={(e) => setShowInput(false)}>
                     X
                 </button>
             </div>
