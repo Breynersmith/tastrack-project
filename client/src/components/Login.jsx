@@ -22,7 +22,7 @@ export default function Login(){
           navigate("/dashboard")
         }
      } catch (err) {
-       setLocalError('Invalid Credentials')
+       setLocalError(`server error ${err}`)
      }
     }
     else {

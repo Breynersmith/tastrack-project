@@ -55,7 +55,7 @@ export const signupUser = createAsyncThunk(
        return response.data
      } 
         } catch (error) {
-            return thunkApi.rejectWithValue(error.response.data)
+            return thunkApi.rejectWithValue(error.response?.data || "unexpected error")
         }
     })
  
