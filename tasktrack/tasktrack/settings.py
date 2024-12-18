@@ -141,8 +141,8 @@ ALLOWED_HOSTS = ['tastrack-client.vercel.app', 'tastrack-project-breyner.vercel.
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://tastrack-client.vercel.app/",
-    'https://tastrack-project-breyner.vercel.app/'
+    "https://tastrack-client.vercel.app",
+    'https://tastrack-project-breyner.vercel.app'
 ]
 
 DJOSER = {
