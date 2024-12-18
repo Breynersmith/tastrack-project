@@ -22,6 +22,7 @@ export default function Login(){
           navigate("/dashboard")
         }
      } catch (err) {
+         console.log(err)
        setLocalError(`server error ${err}`)
      }
     }
