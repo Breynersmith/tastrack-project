@@ -137,14 +137,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['tastrack-client.vercel.app', 'tastrack-project.vercel.app', 'tastrack-client.vercel.app/login',
-'tastrack-client.vercel.app/register',
-'tastrack-client.vercel.app/dashboard']
+ALLOWED_HOSTS = ['tastrack-client.vercel.app', 'tastrack-project.vercel.app']
 
 
 CORS_ALLOWED_ORIGINS = [
     "https://tastrack-client.vercel.app",
-    "https://tastrack-client.vercel.app/login",
     'https://tastrack-project.vercel.app'
 ]
 
