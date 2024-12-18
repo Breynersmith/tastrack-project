@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-ed0!+xflfsbke%e17#rpkrl5$fy0(#wa%z@g_@-@z7b(-%t_64
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://tastrack-client.vercel.app/']
 
 
 
@@ -144,8 +144,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173/",
-    "http://127.0.0.1:5173/"
+    "https://tastrack-client.vercel.app/login"
     'https://tastrack-project-breyner.vercel.app/'
 ]
 
