@@ -48,10 +48,7 @@ export const signupUser = createAsyncThunk(
         password
       }, {
         headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36',
-      Referer: 'http://127.0.0.1:5173/register',
+      'Content-Type': 'application/json'
     },
       })
      if (response.status === 201) {
